@@ -14,6 +14,8 @@
         </style>
 
         <script>
+
+            
             function startGame(){ // as soon as it loads, this will be displayed
 
                 for (var i = 1; i <= 9; i++) {
@@ -30,11 +32,12 @@
 
             function setMessage(msg){
                 document.getElementById("message").innerText = msg; // the message from html
+                count++;
             }
 
             function nextMove(square){
                 if(document.winner != null) {
-                    setMessage(document.winner + " already won the game.");
+                    setMessageForWinner(document.winner + " already won the game.");
                 }
                 if (square.innerText == "") {
                     square.innerText = document.turn;
